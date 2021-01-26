@@ -4,25 +4,30 @@
 import PackageDescription
 
 let package = Package(
-    name: "relative-set-diff",
-    products: [
-        // Products define the executables and libraries a package produces, and make them visible to other packages.
-        .library(
-            name: "relative-set-diff",
-            targets: ["relative-set-diff"]),
-    ],
-    dependencies: [
-        // Dependencies declare other packages that this package depends on.
-        // .package(url: /* package url */, from: "1.0.0"),
-    ],
-    targets: [
-        // Targets are the basic building blocks of a package. A target can define a module or a test suite.
-        // Targets can depend on other targets in this package, and on products in packages this package depends on.
-        .target(
-            name: "relative-set-diff",
-            dependencies: []),
-        .testTarget(
-            name: "relative-set-diffTests",
-            dependencies: ["relative-set-diff"]),
-    ]
+	name: "TrackedOrderedSet",
+	platforms: [
+		.macOS(.v10_15),
+		.iOS(.v12),
+	],
+	products: [
+		// Products define the executables and libraries a package produces, and make them visible to other packages.
+		.library(
+			name: "tracked-ordered-set",
+			targets: ["tracked-ordered-set"]),
+	],
+	dependencies: [
+		// Dependencies declare other packages that this package depends on.
+		// .package(url: /* package url */, from: "1.0.0"),
+    // .package(url: "https://github.com/sciv-img/OSet", from: "0.6.1"),
+	],
+	targets: [
+		// Targets are the basic building blocks of a package. A target can define a module or a test suite.
+		// Targets can depend on other targets in this package, and on products in packages this package depends on.
+		.target(
+				name: "tracked-ordered-set",
+				dependencies: []),
+		.testTarget(
+				name: "tracked-ordered-setTests",
+				dependencies: ["tracked-ordered-set"]),
+	]
 )
