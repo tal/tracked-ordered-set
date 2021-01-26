@@ -3,17 +3,17 @@
 
 import PackageDescription
 
+let name = "TrackedOrderedSet"
+
 let package = Package(
-	name: "TrackedOrderedSet",
+	name: name,
 	platforms: [
 		.macOS(.v10_15),
 		.iOS(.v13),
 	],
 	products: [
 		// Products define the executables and libraries a package produces, and make them visible to other packages.
-		.library(
-			name: "TrackedOrderedSet",
-			targets: ["tracked-ordered-set"]),
+		.library(name: name, targets: [name]),
 	],
 	dependencies: [
 		// Dependencies declare other packages that this package depends on.
@@ -23,11 +23,7 @@ let package = Package(
 	targets: [
 		// Targets are the basic building blocks of a package. A target can define a module or a test suite.
 		// Targets can depend on other targets in this package, and on products in packages this package depends on.
-		.target(
-				name: "tracked-ordered-set",
-				dependencies: []),
-		.testTarget(
-				name: "tracked-ordered-setTests",
-				dependencies: ["tracked-ordered-set"]),
+		.target(name: name, path: "Sources/tracked-ordered-set"),
+		.testTarget(name: "TrackedOrderedSetTests", dependencies: [.init(stringLiteral: name)], path: "Tests/tracked-ordered-set-tests"),
 	]
 )

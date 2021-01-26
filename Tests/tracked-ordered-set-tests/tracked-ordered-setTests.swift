@@ -1,11 +1,11 @@
 import XCTest
-@testable import tracked_ordered_set
+@testable import TrackedOrderedSet
 
 enum Basic: String {
 	case one, two, three, four, five, six, seven
 }
 
-final class tracked_ordered_setTests: XCTestCase {
+final class TrackedOrderedSetTests: XCTestCase {
 	func testMoveToFirst() {
 		let initialBase: OrderedSet<Basic> = [.one, .two, .three, .four]
 		let moved: OrderedSet<Basic> = [.four, .one, .two, .three]
